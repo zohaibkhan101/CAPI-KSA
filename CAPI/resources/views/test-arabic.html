@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&family=Tajawal:wght@200;300;400;500;700;800;900&display=swap' rel='stylesheet'>
+    <link rel="icon" type="image/png" href="images/logo.png"/>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="rtl-styles.css">
+    <title>Arabic Language Test - CAPI Global</title>
+    <style>
+        .test-container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .test-section {
+            margin: 30px 0;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+        .lang-switch {
+            background: #AA6C39;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 20px 0;
+        }
+        .lang-switch:hover {
+            background: #8a5a2f;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>CAPI Global - Arabic Language Integration Test</h1>
+        <button class="lang-switch" aria-label="Switch Language">عربي</button>
+        
+        <div class="test-section">
+            <h2 data-translate="companyName">CAPI Global Company</h2>
+            <p data-translate="aboutDescription">CAPI is a leading Saudi architecture company dedicated to blending cultural heritage with modern design...</p>
+        </div>
+        
+        <div class="test-section">
+            <h3 data-translate="ourServices">Our Services</h3>
+            <ul>
+                <li data-translate="mudHouses">Mud Houses & Buildings</li>
+                <li data-translate="civilWorks">Civil & Construction Works</li>
+                <li data-translate="electricalMechanical">Electrical & Mechanical Works</li>
+                <li data-translate="waterFeatures">Water Features</li>
+            </ul>
+        </div>
+        
+        <div class="test-section">
+            <h3 data-translate="contactUs">Contact Us</h3>
+            <p><strong data-translate="phone">Phone:</strong> +966-50 977 6976</p>
+            <p><strong data-translate="email">Email:</strong> info@capi-ksa.com</p>
+        </div>
+        
+        <div class="test-section">
+            <h3>Form Test</h3>
+            <form>
+                <label data-translate="fullName">Full Name</label><br>
+                <input type="text" data-placeholder="enterName" placeholder="Enter your name" style="width: 100%; padding: 8px; margin: 5px 0;"><br><br>
+                
+                <label data-translate="email">Email</label><br>
+                <input type="email" data-placeholder="enterEmail" placeholder="Enter your email" style="width: 100%; padding: 8px; margin: 5px 0;"><br><br>
+                
+                <label data-translate="message">Message</label><br>
+                <textarea data-placeholder="writeMessage" placeholder="Write your message here" style="width: 100%; padding: 8px; margin: 5px 0; height: 100px;"></textarea><br><br>
+                
+                <button type="submit" data-translate="send">Send</button>
+                <button type="reset" data-translate="reset">Reset</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="translations.js"></script>
+</body>
+</html>

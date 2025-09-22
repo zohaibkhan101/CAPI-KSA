@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&family=Tajawal:wght@200;300;400;500;700;800;900&display=swap' rel='stylesheet'>
+    <link rel="icon" type="image/png" href="images/logo.png"/>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="rtl-styles.css">
+    <title>Language Detection Test - CAPI Global</title>
+    <style>
+        .test-container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .test-section {
+            margin: 30px 0;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+        .lang-switch {
+            background: #AA6C39;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 20px 0;
+        }
+        .lang-switch:hover {
+            background: #8a5a2f;
+        }
+        .detection-info {
+            background: #f0f8ff;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #AA6C39;
+        }
+        .clear-storage {
+            background: #dc3545;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 10px 0;
+        }
+        .clear-storage:hover {
+            background: #c82333;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>CAPI Global - Auto Language Detection Test</h1>
+        
+        <div class="detection-info">
+            <h3>Language Detection Information:</h3>
+            <p><strong>Browser Language:</strong> <span id="browserLang"></span></p>
+            <p><strong>Detected Language:</strong> <span id="detectedLang"></span></p>
+            <p><strong>Current Language:</strong> <span id="currentLang"></span></p>
+            <p><strong>Saved Preference:</strong> <span id="savedPref"></span></p>
+        </div>
+        
+        <button class="lang-switch" aria-label="Switch Language">عربي</button>
+        <button class="clear-storage" onclick="clearLanguagePreference()">Clear Language Preference</button>
+        
+        <div class="test-section">
+            <h2 data-translate="companyName">CAPI Global Company</h2>
+            <p data-translate="aboutDescription">CAPI is a leading Saudi architecture company dedicated to blending cultural heritage with modern design...</p>
+        </div>
+        
+        <div class="test-section">
+            <h3 data-translate="ourServices">Our Services</h3>
+            <ul>
+                <li data-translate="mudHouses">Mud Houses & Buildings</li>
+                <li data-translate="civilWorks">Civil & Construction Works</li>
+                <li data-translate="electricalMechanical">Electrical & Mechanical Works</li>
+                <li data-translate="waterFeatures">Water Features</li>
+            </ul>
+        </div>
+        
+        <div class="test-section">
+            <h3>Stats Test</h3>
+            <p><strong data-translate="founded">Founded:</strong> <span data-translate="2022">2022</span></p>
+            <p><strong data-translate="branches">Branches:</strong> <span data-translate="riyadhJeddahMadinah">Riyadh  Jeddah  Madinah</span></p>
+            <p><strong data-translate="projects">Projects:</strong> <span data-translate="20">20</span></p>
+            <p><strong data-translate="coverage">Coverage:</strong> <span data-translate="saudiArabia">Saudi Arabia</span></p>
+        </div>
+        
+        <div class="test-section">
+            <h3>Instructions:</h3>
+            <ol>
+                <li>Clear your language preference using the button above</li>
+                <li>Refresh the page to test auto-detection</li>
+                <li>If your browser language is Arabic, the page should automatically load in Arabic</li>
+                <li>You should see a notification about language detection</li>
+                <li>Try changing your browser language settings to test different scenarios</li>
+            </ol>
+        </div>
+    </div>
+
+    <script src="translations.js"></script>
+    <script>
+        // Display detection information
+        function updateDetectionInfo() {
+            document.getElementById('browserLang').textContent = navigator.language || navigator.userLanguage || 'Unknown';
+            document.getElementById('detectedLang').textContent = window.languageManager ? window.languageManager.detectLanguage() : 'Unknown';
+            document.getElementById('currentLang').textContent = window.languageManager ? window.languageManager.currentLanguage : 'Unknown';
+            document.getElementById('savedPref').textContent = localStorage.getItem('language') || 'None (Auto-detected)';
+        }
+        
+        function clearLanguagePreference() {
+            localStorage.removeItem('language');
+            alert('Language preference cleared! Refresh the page to test auto-detection.');
+            updateDetectionInfo();
+        }
+        
+        // Update info when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(updateDetectionInfo, 100);
+        });
+    </script>
+</body>
+</html>

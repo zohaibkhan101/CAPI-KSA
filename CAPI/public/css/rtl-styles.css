@@ -1,0 +1,416 @@
+/* RTL (Right-to-Left) Support for Arabic Language */
+
+/* RTL Base Styles */
+.rtl {
+    direction: rtl;
+    text-align: right;
+}
+
+.rtl * {
+    text-align: inherit;
+}
+
+/* RTL Navigation */
+.rtl .main-nav {
+    flex-direction: row-reverse;
+}
+
+.rtl .main-nav a {
+    margin-left: 0;
+    margin-right: 1.5rem;
+}
+
+.rtl .main-nav a:last-child {
+    margin-right: 0;
+}
+
+/* RTL Header */
+.rtl .header-inner {
+    flex-direction: row-reverse;
+}
+
+.rtl .brand {
+    flex-direction: row-reverse;
+}
+
+.rtl .brand h2 {
+    margin-left: 0;
+    margin-right: 10px;
+}
+
+/* RTL Hero Content */
+.rtl .hero-content {
+    text-align: center;
+}
+
+/* RTL Service Cards */
+.rtl .service-cards {
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+}
+
+.rtl .service-cards .card {
+    text-align: right;
+}
+
+/* RTL Project Cards */
+.rtl .project-cards {
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+}
+
+.rtl .project-cards .card {
+    text-align: right;
+}
+
+/* RTL Footer */
+.rtl footer .container {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.rtl footer .one,
+.rtl footer .two,
+.rtl footer .three,
+.rtl footer .four {
+    text-align: right;
+}
+
+.rtl footer .icons {
+    justify-content: flex-start;
+}
+
+/* RTL Contact Form */
+.rtl .contact-form {
+    text-align: right;
+}
+
+.rtl .contact-form label {
+    text-align: right;
+    display: block;
+}
+
+.rtl .contact-form input,
+.rtl .contact-form textarea {
+    text-align: right;
+}
+
+.rtl .form-actions {
+    justify-content: flex-start;
+}
+
+/* RTL About Page */
+.rtl .content {
+    text-align: right;
+}
+
+.rtl .leadership {
+    text-align: right;
+}
+
+/* RTL Services Page */
+.rtl .content article {
+    text-align: right;
+}
+
+/* RTL Stats */
+.rtl .stats {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.rtl .stat {
+    text-align: center;
+}
+
+/* RTL Gallery */
+.rtl .slideshow-track {
+    direction: rtl;
+}
+
+/* RTL Button Groups */
+.rtl .cta {
+    flex-direction: row-reverse;
+}
+
+.rtl .cta .btn {
+    margin-left: 0;
+    margin-right: 1rem;
+}
+
+.rtl .cta .btn:last-child {
+    margin-right: 0;
+}
+
+/* RTL Lists */
+.rtl ul {
+    text-align: right;
+    padding-right: 0;
+    padding-left: 1.5rem;
+}
+
+.rtl li {
+    text-align: right;
+}
+
+/* RTL Typography Adjustments */
+.rtl h1,
+.rtl h2,
+.rtl h3,
+.rtl h4,
+.rtl h5,
+.rtl h6 {
+    text-align: right;
+}
+
+.rtl p {
+    text-align: right;
+}
+
+/* RTL Form Elements */
+.rtl input[type="text"],
+.rtl input[type="email"],
+.rtl textarea {
+    text-align: right;
+    direction: rtl;
+}
+
+/* RTL Icons */
+.rtl .bx {
+    margin-left: 0;
+    margin-right: 0.5rem;
+}
+
+/* RTL Mobile Navigation */
+@media (max-width: 768px) {
+    .rtl .main-nav {
+        flex-direction: column;
+        text-align: right;
+    }
+    
+    .rtl .main-nav a {
+        margin-right: 0;
+        margin-left: 0;
+        text-align: right;
+    }
+    
+    .rtl .header-inner {
+        flex-direction: row;
+    }
+    
+    .rtl .brand {
+        flex-direction: row;
+    }
+    
+    .rtl footer .container {
+        flex-direction: column;
+    }
+    
+    .rtl .service-cards,
+    .rtl .project-cards {
+        flex-direction: column;
+    }
+    
+    .rtl .stats {
+        flex-direction: column;
+    }
+}
+
+/* RTL Animation Adjustments */
+.rtl .reveal {
+    transform: translateX(16px);
+}
+
+.rtl .reveal.reveal-visible {
+    transform: none;
+}
+
+/* RTL Specific Font Adjustments */
+.rtl {
+    font-family: 'Cairo', 'Tajawal', 'Amiri', 'Noto Sans Arabic', sans-serif;
+}
+
+/* RTL Logo Adjustments */
+.rtl .logo {
+    flex-direction: row-reverse;
+}
+
+.rtl .logo h2 {
+    margin-left: 0;
+    margin-right: 10px;
+}
+
+/* RTL Contact Info */
+.rtl .contact-info {
+    text-align: right;
+}
+
+.rtl .contact-info p {
+    text-align: right;
+}
+
+/* RTL Map Container */
+.rtl iframe {
+    direction: ltr; /* Keep map in LTR */
+}
+
+/* RTL Social Icons */
+.rtl .icons {
+    justify-content: flex-start;
+}
+
+.rtl .icons a {
+    margin-left: 0;
+    margin-right: 0.5rem;
+}
+
+.rtl .icons a:last-child {
+    margin-right: 0;
+}
+
+/* RTL Page Headers */
+.rtl .page-header {
+    text-align: center;
+}
+
+.rtl .page-header h1,
+.rtl .page-header .lead {
+    text-align: center;
+}
+
+/* RTL Service Header */
+.rtl .service-header {
+    text-align: right;
+}
+
+.rtl .service-header h4,
+.rtl .service-header h2 {
+    text-align: right;
+}
+
+/* RTL Projects Header */
+.rtl .projects-header {
+    text-align: right;
+}
+
+.rtl .projects-header h4 {
+    text-align: right;
+}
+
+/* RTL About Header */
+.rtl .about-header {
+    text-align: right;
+}
+
+.rtl .about-header h4 {
+    text-align: right;
+}
+
+/* RTL Contact Header */
+.rtl .contact-header {
+    text-align: right;
+}
+
+.rtl .contact-header h4,
+.rtl .contact-header h1,
+.rtl .contact-header p {
+    text-align: right;
+}
+
+/* RTL Quick Stats */
+.rtl .quick-stats {
+    text-align: center;
+}
+
+.rtl .quick-stats .stat {
+    text-align: center;
+}
+
+/* RTL Why CAPI Section */
+.rtl .why-capi {
+    text-align: right;
+}
+
+.rtl .why-capi h4,
+.rtl .why-capi p,
+.rtl .why-capi ul {
+    text-align: right;
+}
+
+/* RTL Newsletter (if used) */
+.rtl .newsletter {
+    flex-direction: row-reverse;
+}
+
+.rtl .newsletter .left-content,
+.rtl .newsletter .right-content {
+    text-align: right;
+}
+
+/* RTL Form Styling */
+.rtl .form-actions {
+    flex-direction: row-reverse;
+}
+
+.rtl .form-actions .btn {
+    margin-left: 0;
+    margin-right: 1rem;
+}
+
+.rtl .form-actions .btn:last-child {
+    margin-right: 0;
+}
+
+/* RTL Table Support (if needed) */
+.rtl table {
+    direction: rtl;
+}
+
+.rtl th,
+.rtl td {
+    text-align: right;
+}
+
+/* RTL Dropdown Support (if needed) */
+.rtl select {
+    text-align: right;
+    direction: rtl;
+}
+
+/* RTL Breadcrumb Support (if needed) */
+.rtl .breadcrumb {
+    flex-direction: row-reverse;
+}
+
+.rtl .breadcrumb a {
+    margin-left: 0;
+    margin-right: 0.5rem;
+}
+
+/* RTL Modal Support (if needed) */
+.rtl .modal {
+    text-align: right;
+}
+
+.rtl .modal-header,
+.rtl .modal-body,
+.rtl .modal-footer {
+    text-align: right;
+}
+
+/* RTL Tooltip Support (if needed) */
+.rtl .tooltip {
+    text-align: right;
+}
+
+/* RTL Accordion Support (if needed) */
+.rtl .accordion {
+    text-align: right;
+}
+
+.rtl .accordion-header,
+.rtl .accordion-content {
+    text-align: right;
+}
