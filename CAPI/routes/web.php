@@ -24,5 +24,12 @@ Route::middleware(['auth','is_admin'])->group(function () {
     Route::resource('admin/careers', \App\Http\Controllers\CareerController::class);
     Route::get('admin/vendors', [\App\Http\Controllers\VendorController::class, 'index'])->name('admin.vendors');
 });
+Route::middleware(['auth','is_admin'])->prefix('admin')->group(function () {
+    Route::get('/', function () {
+        return view('admin.dashboard');
+    })->name('admin.dashboard');
+
+    Route::resource('jobs', \App\Http\Controllers\Admin\JobController::class);
+});
 
 require __DIR__.'/auth.php';
