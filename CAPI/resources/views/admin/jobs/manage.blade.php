@@ -5,7 +5,7 @@
         </h2>
     </x-slot>
 
-    <div class="py-6 px-4">
+    <div x-data="{ openForm: false }" class="py-6 px-4">
         <!-- Post Job Button -->
         <div class="flex justify-between items-center mb-6">
             <h1 class="text-2xl font-bold">Jobs Dashboard</h1>
@@ -15,7 +15,7 @@
         </div>
 
         <!-- Job Post Form -->
-        <div x-data="{ openForm: false }" x-show="openForm" class="mb-6 p-6 border rounded-lg shadow-lg bg-white dark:bg-gray-800">
+        <div x-show="openForm" class="mb-6 p-6 border rounded-lg shadow-lg bg-white dark:bg-gray-800">
             <form action="{{ route('admin.jobs.store') }}" method="POST">
                 @csrf
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
