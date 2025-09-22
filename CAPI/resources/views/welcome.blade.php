@@ -21,7 +21,7 @@
       ☰
     </button>
       <nav class="main-nav">
-        <a href="index.html" data-translate="home">Home</a>
+        <a href="index.html" data-translate="home">Dashboard</a>
         <a href="about.html" data-translate="about">About</a>
         <a href="services.html" data-translate="services">Services</a>
         <a href="projects.html" data-translate="projects">Projects</a>
@@ -309,7 +309,7 @@
             <div class="two">
                 <h3 data-translate="links">Links</h3>
                 <ul>
-                    <li><a href="./index.html" data-translate="home">Home</a></li>
+                    <li><a href="./index.html" data-translate="home">Dashboard</a></li>
                     <li><a href="./services.html" data-translate="services">Services</a></li>
                     <li><a href="./projects.html" data-translate="projects">Projects</a></li>
                     <li><a href="./about.html" data-translate="testimony">Testimony</a></li>
