@@ -47,4 +47,29 @@ class JobApplicationController extends Controller
 
         return back()->with('success', 'Your application has been submitted!');
     }
+    public function getApplicants($jobId)
+    {
+        $job = Job::find($jobId);
+
+        if (!$job) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Job not found'
+            ], 404);
+        }
+
+        $applicants = JobApplicant::where('job_id', $jobId)
+            ->select('id', 'name', 'email', 'phone', 'nationality', 'experience', 'education', 'cv_path', 'created_at')
+            ->get();
+
+        return response()->json([
+            'success' => true,
+            'job' => [
+                'id' => $job->id,
+                'title' => $job->title
+            ],
+            'applicants' => $applicants
+        ]);
+    }
 }
+

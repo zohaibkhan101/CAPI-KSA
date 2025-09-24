@@ -76,5 +76,6 @@ Route::apiResource('jobs', JobApiController::class);
 
 // Job application form submission
 Route::post('/jobs/{job}/apply', [JobApplicationController::class, 'apply'])->name('jobs.apply');
+Route::get('/jobs/{jobId}/applicants', [JobApplicationController::class, 'getApplicants']);
 
 
