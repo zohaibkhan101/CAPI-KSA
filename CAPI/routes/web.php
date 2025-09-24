@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Admin\JobController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
-
+use App\Http\Controllers\JobApplicationController;
 // =============================
 // Public Pages
 // =============================
@@ -13,6 +13,8 @@ Route::view('/about', 'about')->name('about');
 Route::view('/services', 'services')->name('services');
 Route::view('/projects', 'projects')->name('projects');
 Route::view('/contact', 'contact')->name('contact');
+Route::get('/careers', [JobApplicationController::class, 'index'])->name('careers');
+
 
 // =============================
 // Authenticated User Dashboard
@@ -66,5 +68,13 @@ Route::middleware(['auth','verified'])->prefix('admin')->name('admin.')->group(f
 use App\Http\Controllers\Api\JobApiController as JobApiController;
 
 Route::apiResource('jobs', JobApiController::class);
+
+
+
+// User-facing careers/jobs page
+// Route::get('/careers', [JobApplicationController::class, 'index'])->name('jobs.index');
+
+// Job application form submission
+Route::post('/jobs/{job}/apply', [JobApplicationController::class, 'apply'])->name('jobs.apply');
 
 

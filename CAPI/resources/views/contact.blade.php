@@ -34,23 +34,7 @@
         </div>
     </div>
 </section>
-<!-- <section class="newsletter">
-        <div class="container">
-            <div class="left-content">
-                <h3>Please Subscribe to the Newsletter for the best service possible</h3>
-            </div>
-            <div class="right-content">
-                <form>
-                    <h4>Subscribe to our newsletter</h4>
-                    <div>
-                        <input type="text" id="search">
-                        <button>Subscribe</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </section>  -->
-   
+
 
     <!--js file -->
     <script src="{{ asset('/js/translations.js') }}"></script>
