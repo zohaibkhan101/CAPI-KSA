@@ -3,6 +3,12 @@
 @section('title', 'Home') <!-- Page title -->
 
 @section('content')       <!-- Page-specific content starts here -->
+<section class="page-header">
+    <div class="container">
+        <h1 data-translate="contactUs"></h1>
+        <p class="lead" data-translate="contactSubtitle"></p>
+    </div>
+</section>
     <div class="contact-content container">
         <!-- Contact Info -->
         <div class="contact-info">
@@ -16,7 +22,7 @@
         <!-- Contact Form -->
         <div class="contact-form">
             <h3 data-translate="sendMessage">Send Us a Message</h3>
-            <form id="contactForm" action="mailto:info@capi-ksa.com" method="post" enctype="text/plain">
+            <form id="contactForm" method="POST" action="{{ route('contact.send') }}">
                 <label for="name" data-translate="fullName">Full Name</label>
                 <input type="text" id="name" name="name" data-placeholder="enterName" placeholder="Enter your name" required />
                 

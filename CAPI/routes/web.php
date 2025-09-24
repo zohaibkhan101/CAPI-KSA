@@ -79,3 +79,9 @@ Route::post('/jobs/{job}/apply', [JobApplicationController::class, 'apply'])->na
 Route::get('/jobs/{jobId}/applicants', [JobApplicationController::class, 'getApplicants']);
 
 
+//contact controller
+use App\Http\Controllers\ContactController;
+
+Route::post('/contact/send', [ContactController::class, 'send'])->name('contact.send');
+
+

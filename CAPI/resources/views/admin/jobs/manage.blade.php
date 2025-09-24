@@ -58,7 +58,7 @@
         </div>
 
         <!-- Jobs Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
+        <div style="margin: top 10px; gap: 10px;"class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
             <template x-for="job in jobs" :key="job.id">
                 <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
                     <h3 class="text-xl font-semibold mb-2" x-text="job.title"></h3>
@@ -69,9 +69,9 @@
                     <div style="display: flex; flex-wrap: wrap; gap: 10px;">
     <button 
         @click="editJob(job)" 
-        style="background-color: #6b7280; color: white; padding: 6px 12px; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.2); border: none; cursor: pointer;"
+        style="background-color: #f59e0b; color: white; padding: 6px 12px; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.2); border: none; cursor: pointer;"
         onmouseover="this.style.backgroundColor='#f59e0b'"
-        onmouseout="this.style.backgroundColor='#6b7280'"
+        onmouseout="this.style.backgroundColor='#f59e0b'"
     >
         Edit
     </button>
