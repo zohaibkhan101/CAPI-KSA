@@ -100,12 +100,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
 let slides = document.querySelectorAll(".slideshow img");
 let current = 0;
-
+if(slides.length >0){
 function changeSlide() {
   slides[current].classList.remove("active");
   current = (current + 1) % slides.length;
   slides[current].classList.add("active");
-}
+}}
 
 setInterval(changeSlide, 2000); // change every 4 sec
 

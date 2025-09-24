@@ -26,7 +26,7 @@ class JobApplicationController extends Controller
             'nationality' => 'nullable|string|max:100',
             'experience' => 'nullable|string|max:255',
             'education' => 'nullable|string|max:255',
-            'cv' => 'nullable|file|mimes:pdf,doc,docx|max:2048',
+            'cv' => 'required|file|mimes:pdf,doc,docx|max:2048',
         ]);
 
         $cvPath = null;

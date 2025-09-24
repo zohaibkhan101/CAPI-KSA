@@ -190,6 +190,28 @@ function closeModal(id) {
     document.getElementById('applyModal-' + id).classList.add('hidden');
 }
 </script>
+<!-- SweetAlert -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+    @if(session('success'))
+        Swal.fire({
+            icon: 'success',
+            title: 'Success!',
+            text: "{{ session('success') }}",
+            confirmButtonColor: '{{ config('app.primary_color', '#AA6C39') }}'
+        });
+    @endif
+
+    @if($errors->any())
+        Swal.fire({
+            icon: 'error',
+            title: 'Error!',
+            html: '{!! implode("<br>", $errors->all()) !!}',
+            confirmButtonColor: '{{ config('app.primary_color', '#AA6C39') }}'
+        });
+    @endif
+</script>
 
 <script src="{{ asset('/js/translations.js') }}"></script>
 <script src="{{ asset('/js/app.js') }}"></script>

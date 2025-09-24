@@ -17,7 +17,8 @@ class JobApplicant extends Model
         'phone',
         'nationality',
         'experience',
-        'cv',
+        'education', // don't forget this if you use it
+        'cv_path',   // <-- this should match the DB column name
     ];
 
     public function job()
