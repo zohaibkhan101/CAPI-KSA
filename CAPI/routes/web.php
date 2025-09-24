@@ -63,3 +63,8 @@ Route::middleware(['auth','verified'])->prefix('admin')->name('admin.')->group(f
     // Route::resource('careers', CareerController::class);
     // Route::get('vendors', [VendorController::class, 'index'])->name('vendors');
 });
+use App\Http\Controllers\Api\JobApiController as JobApiController;
+
+Route::apiResource('jobs', JobApiController::class);
+
+
