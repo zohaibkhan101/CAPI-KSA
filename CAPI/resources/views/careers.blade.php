@@ -17,6 +17,7 @@
         @foreach($jobs as $job)
         <article class="job-card">
             <h2>{{ $job->title }}</h2>
+            <p class="job-desc">{{ $job->description }}</p>
             <p><strong>Location:</strong> {{ $job->location ?? 'N/A' }}</p>
             <p><strong>Type:</strong> {{ $job->type ?? 'N/A' }}</p>
             <p><strong>Deadline:</strong> {{ $job->deadline ?? 'Open' }}</p>
