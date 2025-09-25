@@ -91,4 +91,10 @@ Route::get('/supplier/register', [SupplierController::class, 'create'])->name('s
 Route::post('/supplier/register', [SupplierController::class, 'store'])->name('supplier.store');
 
 
+Route::middleware(['auth','verified'])->prefix('admin')->name('admin.')->group(function () {
+    Route::get('suppliers', [SupplierController::class, 'index'])->name('suppliers.index');
+    Route::delete('suppliers/{id}', [SupplierController::class, 'destroy'])->name('suppliers.destroy');
+    Route::get('suppliers/{id}/edit', [SupplierController::class, 'edit'])->name('suppliers.edit');
+});
+
 

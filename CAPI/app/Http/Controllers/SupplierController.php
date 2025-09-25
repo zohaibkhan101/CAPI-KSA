@@ -61,5 +61,16 @@ class SupplierController extends Controller
 
         return redirect()->back()->with('success', 'Supplier registration submitted successfully!');
     }
+    public function index() {
+        $suppliers = Supplier::all();
+        return view('admin.suppliers', compact('suppliers'));
+    }
+    
+    
+    public function destroy($id) {
+        Supplier::findOrFail($id)->delete();
+        return response()->json(['success' => true]);
+    }
+    
 }
 
