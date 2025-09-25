@@ -14,6 +14,7 @@ Route::view('/services', 'services')->name('services');
 Route::view('/projects', 'projects')->name('projects');
 Route::view('/contact', 'contact')->name('contact');
 Route::get('/careers', [JobApplicationController::class, 'index'])->name('careers');
+Route::view('/vendors','vendors')->name('vendors');
 
 
 // =============================

@@ -30,10 +30,11 @@
         <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
 
         <nav class="main-nav">
-            <a href="{{ route('home') }}" class="{{ request()->routeIs('home') ? 'active' : '' }}" data-translate="home">Home</a>
+            <!-- <a href="{{ route('home') }}" class="{{ request()->routeIs('home') ? 'active' : '' }}" data-translate="home">Home</a> -->
             <a href="{{ route('about') }}" class="{{ request()->routeIs('about') ? 'active' : '' }}" data-translate="about">About</a>
             <a href="{{ route('services') }}" class="{{ request()->routeIs('services') ? 'active' : '' }}" data-translate="services">Services</a>
             <a href="{{ route('projects') }}" class="{{ request()->routeIs('projects') ? 'active' : '' }}" data-translate="projects">Projects</a>
+            <a href="{{ route('vendors') }}" class="{{ request()->routeIs('vendors') ? 'active' : '' }}" data-translate="vendors">Vendors</a>
             <a href="{{ route('careers') }}" class="{{ request()->routeIs('careers') ? 'active' : '' }}" data-translate="Careers    ">Careers</a>
             <a href="{{ route('contact') }}" class="btn btn-primary {{ request()->routeIs('contact') ? 'active' : '' }}" data-translate="contact">Contact</a>
             
