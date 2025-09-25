@@ -125,9 +125,10 @@
         </header>
         <div class="project-cards container">
             <div class="card">
-                <img src="images/project images/basketball4.jpeg" alt="Heritage Mud Restoration">
-                <h3 data-translate="basketballCourt">Basketball Court Construction </h3>
-                <p data-translate="basketballCourtDesc">Complete basketball court construction including foundation, flooring, markings, and finishing for optimal gameplay.</p>
+            <img src="images/project images/landscaping1.jpg" alt="Landscaping">
+            <h3 data-translate="landscaping">Landscaping</h3>
+            <p data-translate="landscapingDesc">Professional landscaping services including gardens, lawns, outdoor features, and hardscape elements to enhance aesthetics.</p>
+
             </div>
             <div class="card">
                 <img src="images/project images/comercial.jpg" alt="Commercial Fit-out">
