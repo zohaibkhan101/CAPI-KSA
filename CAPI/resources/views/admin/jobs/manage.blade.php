@@ -51,7 +51,7 @@
                 </div>
             </div>
             <div class="mt-4">
-                <button @click="submitJob()" class="bg-green-600 text-white px-4 py-2 rounded shadow hover:bg-green-700 transition">
+                <button @click="submitJob()" class="bg-gray-800 text-white px-4 py-2 rounded shadow hover:bg-green-700 transition">
                     <span x-text="editId ? 'Update Job' : 'Post Job'"></span>
                 </button>
             </div>
@@ -145,18 +145,26 @@
                                                     </template>
                                                 </td>
                                                 <td class="border px-3 py-2" style="display: flex; gap: 10px;">
-    <button 
-        @click="shortlistApplicant(applicant.id)" 
-        style="background: green; color: white; padding: 8px 12px; border-radius: 6px; border: none; cursor: pointer;"
+                                                <a 
+        :href="'mailto:' + applicant.email + 
+        '?subject=Application Shortlisted - ' + job.title + 
+        '&body=Dear ' + applicant.name + ',%0D%0A%0D%0AWe are pleased to inform you that you have been shortlisted for the position of ' + job.title + 
+        '.%0D%0AOur team will contact you for the next steps.%0D%0A%0D%0ARegards,%0D%0AHR Team'"
+        style="background: green; color: white; padding: 8px 12px; border-radius: 6px; border: none; cursor: pointer; text-decoration: none;"
     >
         Shortlist
-    </button>
-    <button 
-        @click="rejectApplicant(applicant.id)" 
-        style="background: red; color: white; padding: 8px 12px; border-radius: 6px; border: none; cursor: pointer;"
+    </a>
+
+    <!-- Reject Button -->
+    <a 
+        :href="'mailto:' + applicant.email + 
+        '?subject=Application Update - ' + job.title + 
+        '&body=Dear ' + applicant.name + ',%0D%0A%0D%0AWe appreciate your interest in the ' + job.title + 
+        ' role. After careful consideration, we regret to inform you that we will not be moving forward with your application.%0D%0A%0D%0AWe wish you success in your career.%0D%0A%0D%0ARegards,%0D%0AHR Team'"
+        style="background: red; color: white; padding: 8px 12px; border-radius: 6px; border: none; cursor: pointer; text-decoration: none;"
     >
         Reject
-    </button>
+    </a>
 </td>
                                             </tr>
                                         </template>
