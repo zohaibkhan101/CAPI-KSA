@@ -32,5 +32,19 @@
                 {{ $slot }}
             </main>
         </div>
+        <!-- Chatbot widget containers (admin layout) -->
+        <div id="chatbot-fab" aria-label="Open chat" title="Chat with us" style="display:none">🤖<span class="sr-only">Open chat</span></div>
+        <div id="chatbot-panel" role="dialog" aria-modal="true" aria-labelledby="chatbot-title" style="display:none">
+            <div class="chatbot-header">
+                <div class="chatbot-title" id="chatbot-title">CAPI Assistant</div>
+                <button type="button" class="chatbot-close" aria-label="Close chat">×</button>
+            </div>
+            <div class="chatbot-messages" id="chatbot-messages" aria-live="polite"></div>
+            <form class="chatbot-input" id="chatbot-form">
+                <input type="text" id="chatbot-text" placeholder="Type your question..." autocomplete="off" aria-label="Message" />
+                <button type="submit" class="chatbot-send" aria-label="Send">Send</button>
+            </form>
+            <div class="chatbot-footer">Powered by a lightweight on-site FAQ bot</div>
+        </div>
     </body>
 </html>

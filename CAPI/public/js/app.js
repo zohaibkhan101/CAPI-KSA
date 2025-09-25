@@ -100,14 +100,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
 let slides = document.querySelectorAll(".slideshow img");
 let current = 0;
-if(slides.length >0){
-function changeSlide() {
-  slides[current].classList.remove("active");
-  current = (current + 1) % slides.length;
-  slides[current].classList.add("active");
-}}
-
-setInterval(changeSlide, 2000); // change every 4 sec
+if (slides.length > 0) {
+  function changeSlide() {
+    slides[current].classList.remove("active");
+    current = (current + 1) % slides.length;
+    slides[current].classList.add("active");
+  }
+  setInterval(changeSlide, 3000); // change every 4 sec
+}
 
 
 let track = document.querySelector('.slideshow-track');
@@ -115,27 +115,29 @@ let slide = document.querySelectorAll('.slide');
 let index = 0;
 let visible = 4; // show 4 at a time
 
-function slideShow() {
-  index++;
-  if (index > slide.length - visible) {
-    index = 0; // restart when reach end
+if (track && slide.length > 0) {
+  function slideShow() {
+    index++;
+    if (index > slide.length - visible) {
+      index = 0; // restart when reach end
+    }
+    track.style.transform = `translateX(-${index * (100 / visible)}%)`;
   }
-  track.style.transform = `translateX(-${index * (100 / visible)}%)`;
+  setInterval(slideShow, 3000); // every 3 sec
 }
-
-setInterval(slideShow, 3000); // every 3 sec
 
 
 
 const toggle = document.querySelector('.nav-toggle');
 const nav = document.querySelector('.main-nav');
-
-toggle.addEventListener('click', () => {
-  nav.classList.toggle('active');
-});
+if (toggle && nav) {
+  toggle.addEventListener('click', () => {
+    nav.classList.toggle('active');
+  });
+}
 const langSwitch = document.querySelector(".lang-switch");
 
-langSwitch.addEventListener("click", () => {
+if (langSwitch) langSwitch.addEventListener("click", () => {
   document.documentElement.classList.toggle("rtl"); // toggle RTL class
   document.documentElement.setAttribute(
     "lang",
@@ -145,4 +147,76 @@ langSwitch.addEventListener("click", () => {
   // Swap button text
   langSwitch.textContent = langSwitch.textContent === "عربي" ? "EN" : "عربي";
 });
+
+// Chatbot widget logic
+(function(){
+  const fab = document.getElementById('chatbot-fab');
+  const panel = document.getElementById('chatbot-panel');
+  const form = document.getElementById('chatbot-form');
+  const input = document.getElementById('chatbot-text');
+  const messages = document.getElementById('chatbot-messages');
+  const closeBtn = panel ? panel.querySelector('.chatbot-close') : null;
+
+  // Only proceed on public layout pages
+  if(!fab || !panel || !form || !input || !messages){ return; }
+
+  // Show after DOM ready
+  fab.style.display = 'flex';
+
+  const companyInfo = {
+    email: 'info@capi-ksa.com',
+    phone: '+966-509776976',
+    address: 'Said Ibn Zaqar, Aziziyah, Jeddah, Saudi Arabia',
+    hours: 'Sun-Thu 9:00-18:00 (KSA)'
+  };
+
+  const faqs = [
+    { q: ['what services','services you offer','offer'], a: 'We provide construction, design, and project management services. See Services page.' },
+    { q: ['contact','email','phone','reach you'], a: `You can contact us at ${companyInfo.email} or ${companyInfo.phone}.` },
+    { q: ['address','location','where are you'], a: `Our head office: ${companyInfo.address}.` },
+    { q: ['hours','opening','support time'], a: `Our hours are ${companyInfo.hours}.` },
+    { q: ['careers','job','apply'], a: 'View open roles on the Careers page. You can apply online there.' },
+    { q: ['vendor','supplier','register'], a: 'Vendors can register via the Vendors page form.' },
+    { q: ['website','about','company'], a: 'We are CAPI Global, your trusted partner in construction and design.' }
+  ];
+
+  function appendMessage(text, who){
+    const div = document.createElement('div');
+    div.className = `chat-msg ${who}`;
+    div.textContent = text;
+    messages.appendChild(div);
+    messages.scrollTop = messages.scrollHeight;
+  }
+
+  function answerFor(text){
+    const t = text.toLowerCase();
+    for(const item of faqs){
+      if(item.q.some(k => t.includes(k))){ return item.a; }
+    }
+    // Fallback: echo plus helpful links
+    return 'I may not have that answer yet. Try asking about services, contact, address, hours, careers, or vendors. You can also visit our Contact page.';
+  }
+
+  function togglePanel(show){
+    if(show){ panel.style.display = 'flex'; input.focus(); }
+    else { panel.style.display = 'none'; }
+  }
+
+  fab.addEventListener('click', () => togglePanel(panel.style.display === 'none' || panel.style.display === ''));
+  if(closeBtn){ closeBtn.addEventListener('click', () => togglePanel(false)); }
+
+  // Greeting
+  appendMessage('Hi! I\'m the CAPI Assistant. Ask me about services, contact details, address, hours, careers, or vendors.', 'bot');
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const text = input.value.trim();
+    if(!text) return;
+    appendMessage(text, 'user');
+    input.value = '';
+    setTimeout(() => {
+      appendMessage(answerFor(text), 'bot');
+    }, 200);
+  });
+})();
 
