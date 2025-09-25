@@ -12,7 +12,7 @@
     <link rel="icon" type="image/png" href="{{ asset('images/logo.png') }}"/>
     
     <!-- CSS -->
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}?v={{ filemtime(public_path('css/style.css')) }}">
     <link rel="stylesheet" href="{{ asset('css/rtl-styles.css') }}">
     
     <title>CAPI Global</title>
@@ -53,7 +53,7 @@
 </main>
 <!-- Chatbot widget containers -->
 <div id="chatbot-fab" aria-label="Open chat" title="Chat with us" style="display:none">
-    🤖
+    🤖chat
     <span class="sr-only">Open chat</span>
   </div>
 <div id="chatbot-panel" role="dialog" aria-modal="true" aria-labelledby="chatbot-title" style="display:none">
@@ -118,10 +118,26 @@
             <p>+966-509776976</p>
         </div>
     </div>
+    <div id="chatbot-fab" aria-label="Open chat" title="Chat with us" style="display:none">
+    🤖chat
+    <span class="sr-only">Open chat</span>
+  </div>
+<div id="chatbot-panel" role="dialog" aria-modal="true" aria-labelledby="chatbot-title" style="display:none">
+  <div class="chatbot-header">
+    <div class="chatbot-title" id="chatbot-title">CAPI Assistant</div>
+    <button type="button" class="chatbot-close" aria-label="Close chat">×</button>
+  </div>
+  <div class="chatbot-messages" id="chatbot-messages" aria-live="polite"></div>
+  <form class="chatbot-input" id="chatbot-form">
+    <input type="text" id="chatbot-text" placeholder="Type your question..." autocomplete="off" aria-label="Message" />
+    <button type="submit" class="chatbot-send" aria-label="Send">Send</button>
+  </form>
+  <div class="chatbot-footer">Powered by a lightweight on-site FAQ bot</div>
+  </div>
 </footer>
 
 
 <!-- JS -->
-<script src="{{ asset('js/app.js') }}"></script>
+<script src="{{ asset('js/app.js') }}?v={{ filemtime(public_path('js/app.js')) }}"></script>
 </body>
 </html>
