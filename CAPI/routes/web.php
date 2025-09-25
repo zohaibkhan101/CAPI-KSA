@@ -85,4 +85,10 @@ use App\Http\Controllers\ContactController;
 
 Route::post('/contact/send', [ContactController::class, 'send'])->name('contact.send');
 
+use App\Http\Controllers\SupplierController;
+
+Route::get('/supplier/register', [SupplierController::class, 'create'])->name('supplier.create');
+Route::post('/supplier/register', [SupplierController::class, 'store'])->name('supplier.store');
+
+
 

@@ -29,7 +29,7 @@
         <li data-translate="vendorPoint3">Receive communications from the Supplier Relationship Management team.</li>
       </ul>
       <div style="text-align: center; margin-top: 30px;">
-<a href="http://127.0.0.1:8000/projects" class="btn primary" style="display: inline-block; 
+<a href="{{ route('supplier.create') }}" class="btn primary" style="display: inline-block; 
             padding: 12px 30px; 
             background-color: #AA6C39; 
             margin-top: 20px;
