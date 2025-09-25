@@ -10,7 +10,10 @@
     </header>
 
     <form id="send-verification" method="post" action="{{ route('verification.send') }}">
+
         @csrf
+        <button form="send-verification" class="...">Click here to re-send the verification email.</button>
+
     </form>
 
     <form method="post" action="{{ route('profile.update') }}" class="mt-6 space-y-6">
