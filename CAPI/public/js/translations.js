@@ -8,7 +8,8 @@ const translations = {
         services: "Services",
         projects: "Projects",
         contact: "Contact",
-        
+        careers:"Careers",
+        vendors:"Vendors",
         // Hero Section
         companyName: "CAPI Global Company",
         heroTitle1: "Preserving Saudi Heritage",
@@ -115,7 +116,10 @@ const translations = {
         writeMessage: "Write your message here",
         send: "Send",
         reset: "Reset",
-        
+        //Career Page
+        careers:"Careers",
+        availableJobs: "Available Jobs",
+        careerIntro: "Join our team and explore exciting career opportunities.",
         // Language Switcher
         switchToArabic: "عربي",
         switchToEnglish: "English"
@@ -128,7 +132,8 @@ const translations = {
         services: "خدماتنا",
         projects: "مشاريعنا",
         contact: "اتصل بنا",
-        
+        careers:"فرص العمل",
+        vendors:"المزوّدين",
         // Hero Section
         companyName: "شركة كابي العالمية",
         heroTitle1: "الحفاظ على التراث السعودي",
@@ -238,7 +243,9 @@ const translations = {
         writeMessage: "اكتب رسالتك هنا",
         send: "إرسال",
         reset: "إعادة تعيين",
-        
+        //Careers page
+        availableJobs: "الوظائف المتاحة",
+        careerIntro: "انضم إلى فريقنا واستكشف فرص عمل مثيرة.",
         // Language Switcher
         switchToArabic: "عربي",
         switchToEnglish: "English"
