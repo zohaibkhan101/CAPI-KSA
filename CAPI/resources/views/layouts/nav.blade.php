@@ -27,20 +27,23 @@
             <h2>CAPI GLOBAL</h2>
         </a>
 
-        <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+        <div class="nav-controls">
+            <button class="lang-switch" aria-label="Switch Language">عربي</button>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
 
-        <nav class="main-nav">
-            <!-- <a href="{{ route('home') }}" class="{{ request()->routeIs('home') ? 'active' : '' }}" data-translate="home">Home</a> -->
+        <nav class="main-nav" id="main-nav">
             <a href="{{ route('about') }}" class="{{ request()->routeIs('about') ? 'active' : '' }}" data-translate="about">About</a>
             <a href="{{ route('services') }}" class="{{ request()->routeIs('services') ? 'active' : '' }}" data-translate="services">Services</a>
             <a href="{{ route('projects') }}" class="{{ request()->routeIs('projects') ? 'active' : '' }}" data-translate="projects">Projects</a>
             <a href="{{ route('vendors') }}" class="{{ request()->routeIs('vendors') ? 'active' : '' }}" data-translate="vendors">Vendors</a>
             <a href="{{ route('careers') }}" class="{{ request()->routeIs('careers') ? 'active' : '' }}" data-translate="careers">Careers</a>
             <a href="{{ route('contact') }}" class="btn btn-primary {{ request()->routeIs('contact') ? 'active' : '' }}" data-translate="contact">Contact</a>
-            
         </nav>
-
-        <button class="lang-switch" aria-label="Switch Language">عربي</button>
     </div>
 </header>
 
@@ -51,23 +54,7 @@
 
 
 </main>
-<!-- Chatbot widget containers -->
-<div id="chatbot-fab" aria-label="Open chat" title="Chat with us" style="display:none">
-    🤖chat
-    <span class="sr-only">Open chat</span>
-  </div>
-<div id="chatbot-panel" role="dialog" aria-modal="true" aria-labelledby="chatbot-title" style="display:none">
-  <div class="chatbot-header">
-    <div class="chatbot-title" id="chatbot-title">CAPI Assistant</div>
-    <button type="button" class="chatbot-close" aria-label="Close chat">×</button>
-  </div>
-  <div class="chatbot-messages" id="chatbot-messages" aria-live="polite"></div>
-  <form class="chatbot-input" id="chatbot-form">
-    <input type="text" id="chatbot-text" placeholder="Type your question..." autocomplete="off" aria-label="Message" />
-    <button type="submit" class="chatbot-send" aria-label="Send">Send</button>
-  </form>
-  <div class="chatbot-footer">Powered by a lightweight on-site FAQ bot</div>
-  </div>
+
 <!-- Footer -->
 <footer>
     <div class="container">

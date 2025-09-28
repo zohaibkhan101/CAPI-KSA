@@ -1,13 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const menuToggle = document.querySelector('.bx-menu-alt-right');
-  if (menuToggle) {
-    menuToggle.addEventListener('click', function () {
-      const navList = document.querySelector('nav ul');
-      if (navList) {
-        navList.classList.toggle('showMenu');
-      }
-    });
-  }
+  // Remove old menu toggle code - now handled by the new hamburger menu below
 
   const counters = document.querySelectorAll(".quick-stats .stat h3[data-target]");
 
@@ -128,13 +120,56 @@ if (track && slide.length > 0) {
 
 
 
-const toggle = document.querySelector('.nav-toggle');
-const nav = document.querySelector('.main-nav');
-if (toggle && nav) {
-  toggle.addEventListener('click', () => {
-    nav.classList.toggle('active');
-  });
-}
+// Mobile Navigation Toggle
+document.addEventListener("DOMContentLoaded", () => {
+  const toggle = document.querySelector('.nav-toggle');
+  const nav = document.querySelector('.main-nav');
+  
+  if (toggle && nav) {
+    toggle.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      
+      nav.classList.toggle('active');
+      toggle.classList.toggle('active');
+      
+      // Prevent body scroll when menu is open
+      if (nav.classList.contains('active')) {
+        document.body.style.overflow = 'hidden';
+      } else {
+        document.body.style.overflow = '';
+      }
+    });
+    
+    // Close menu when clicking on nav links
+    const navLinks = nav.querySelectorAll('a');
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        nav.classList.remove('active');
+        toggle.classList.remove('active');
+        document.body.style.overflow = '';
+      });
+    });
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!nav.contains(e.target) && !toggle.contains(e.target)) {
+        nav.classList.remove('active');
+        toggle.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+    
+    // Close menu on escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && nav.classList.contains('active')) {
+        nav.classList.remove('active');
+        toggle.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+  }
+});
 const langSwitch = document.querySelector(".lang-switch");
 
 if (langSwitch) langSwitch.addEventListener("click", () => {
