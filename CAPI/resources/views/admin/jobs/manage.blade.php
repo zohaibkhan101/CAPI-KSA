@@ -123,19 +123,54 @@
                                 <table class="w-full border border-gray-200">
                                     <thead class="bg-gray-100">
                                         <tr>
-                                            <th class="border px-3 py-2">Name</th>
-                                            <th class="border px-3 py-2">Email</th>
-                                            <th class="border px-3 py-2">Phone</th>
-                                            <th class="border px-3 py-2">CV</th>
-                                            <th class="border px-3 py-2">Actions</th>
+                                        <tr>
+        <th class="border px-3 py-2">Name</th>
+        <th class="border px-3 py-2">Email</th>
+        <th class="border px-3 py-2">Phone</th>
+        <th class="border px-3 py-2">Nationality</th>
+        <th class="border px-3 py-2">Visa Status</th>
+        <th class="border px-3 py-2">How did you hear about this job?</th>
+        <th class="border px-3 py-2">Reference Name</th>
+        <th class="border px-3 py-2">Relative Working Here?</th>
+        <th class="border px-3 py-2">Expected Salary</th>
+        <th class="border px-3 py-2">Availability</th>
+        <th class="border px-3 py-2">Preferred Hours</th>
+        <th class="border px-3 py-2">Strengths</th>
+        <th class="border px-3 py-2">Weaknesses</th>
+        <th class="border px-3 py-2">Career Goals</th>
+        <th class="border px-3 py-2">Legal Work Status</th>
+        <th class="border px-3 py-2">Can Relocate?</th>
+        <th class="border px-3 py-2">CV</th>
+        <th class="border px-3 py-2">Actions</th>
+    </tr>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <template x-for="applicant in applicants" :key="applicant.id">
                                             <tr>
-                                                <td class="border px-3 py-2" x-text="applicant.name"></td>
-                                                <td class="border px-3 py-2" x-text="applicant.email"></td>
-                                                <td class="border px-3 py-2" x-text="applicant.phone"></td>
+                                            <td class="border px-3 py-2" x-text="applicant.name"></td>
+                                            <td class="border px-3 py-2">
+                <a 
+                    :href="`mailto:${applicant.email}?subject=Job Application&body=Dear ${applicant.name}`" 
+                    class="text-blue-600 underline" target="_blank"
+                >
+                    <span>Email</span>
+                </a>
+            </td>
+            <td class="border px-3 py-2" x-text="applicant.phone"></td>
+            <td class="border px-3 py-2" x-text="applicant.nationality"></td>
+            <td class="border px-3 py-2" x-text="applicant.visa_status"></td>
+            <td class="border px-3 py-2" x-text="applicant.job_source"></td>
+            <td class="border px-3 py-2" x-text="applicant.reference_name"></td>
+            <td class="border px-3 py-2" x-text="applicant.relative_working"></td>
+            <td class="border px-3 py-2" x-text="applicant.expected_salary"></td>
+            <td class="border px-3 py-2" x-text="applicant.availability"></td>
+            <td class="border px-3 py-2" x-text="applicant.preferred_hours"></td>
+            <td class="border px-3 py-2" x-text="applicant.strengths"></td>
+            <td class="border px-3 py-2" x-text="applicant.weaknesses"></td>
+            <td class="border px-3 py-2" x-text="applicant.career_goals"></td>
+            <td class="border px-3 py-2" x-text="applicant.legal_work_status"></td>
+            <td class="border px-3 py-2" x-text="applicant.can_relocate"></td>
                                                 <td class="border px-3 py-2">
                                                     <template x-if="applicant.cv_path">
                                                         <a :href="'/storage/' + applicant.cv_path" target="_blank" class="text-blue-600 underline">View CV</a>
