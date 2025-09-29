@@ -28,7 +28,11 @@
         </a>
 
         <div class="nav-controls">
-            <button class="lang-switch" aria-label="Switch Language">عربي</button>
+        <button class="lang-switch" aria-label="Switch Language">
+    <img src="{{ asset('images/arabic.webp') }}" alt="Arabic" class="lang-icon">
+</button>
+
+
             <button class="nav-toggle" aria-label="Toggle navigation">
                 <span class="hamburger-line"></span>
                 <span class="hamburger-line"></span>

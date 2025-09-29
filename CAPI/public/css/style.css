@@ -54,6 +54,7 @@
   position: relative;
   text-align: center;
   z-index: 2;
+  justify-content: center;
 }
 
 .hero::before {
@@ -399,7 +400,7 @@ a{
    .hero-content {
     position: relative;
      z-index: 2; /* keep text above overlay/video */
-    width: 35%;
+    /* width: 35%; */
     margin: 0 auto;
     top: 25%;
     text-align: center;
@@ -411,18 +412,22 @@ a{
 
 
 .hero-content{
-    width: 35%;
+    width: auto;
     margin: 0 auto;
     position: relative;
     top:25%;
     text-align: center;
     h1{
         font-weight: 500;
+        
     }
     h4{
         color: var(--white);
         font: 50px Montserrat, sans-serif;
         font-weight: 700;
+        /* text-align: center;
+        
+        align-items: center; */
     }
 
     p{
@@ -453,20 +458,21 @@ a{
     white-space: nowrap;
     overflow: visible;
     border-right: 0px solid var(--white); /* Cursor */
-    width: 0;
-    animation: typingH4 1s steps(25, end) forwards, blink 0.7s step-end infinite;
+    
+    /* animation: typingH4 1s steps(25, end) forwards, blink 0.7s step-end infinite; */
 }
 
 .hero-content h1 {
     font-weight: 500;
 
-    /* Typing Effect */
-    white-space: nowrap;
+    
+    white-space: normal;
     overflow: visible;
-    border-right: 0px solid var(--white); /* Cursor */
-    width: 0;
+    border-right: none;
+    width: auto;
     text-align: center;
-    animation: typingH1 1s steps(40, end) forwards 1s, blink 0.7s step-end infinite 3s;
+    
+    /* animation: typingH1 1s steps(40, end) forwards 1s, blink 0.7s step-end infinite 3s; */
 }
 
 /* Optional if you later want the paragraph with typing */
@@ -559,7 +565,11 @@ a{
   
   .hero-content h4 {
     font-size: 22px;
-    margin-bottom: 20px;
+    width: auto;
+    text-align: center;
+    white-space: normal;
+    overflow: visible;
+    border-right: none;
   }
   
   .hero-content .cta {

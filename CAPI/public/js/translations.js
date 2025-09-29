@@ -331,8 +331,8 @@ const translations = {
    
     RegisterNow: "سجّل الآن",
         // Language Switcher
-        switchToArabic: "عربي",
-        switchToEnglish: "English"
+        // switchToArabic: "عربي",
+        // switchToEnglish: "English"
     }
 };
 
