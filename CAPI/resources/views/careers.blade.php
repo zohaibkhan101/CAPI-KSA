@@ -275,7 +275,7 @@ function closeModal(id) {
         Swal.fire({
             icon: 'success',
             title: 'Success!',
-            text: "{{ session('success') }}",
+            html: "{{ session('success') }}<br>Reference Number: #{{ session('ref_number') }}",
             confirmButtonColor: '{{ config('app.primary_color', '#AA6C39') }}'
         });
     @endif
@@ -289,6 +289,7 @@ function closeModal(id) {
         });
     @endif
 </script>
+
 
 <script src="{{ asset('/js/translations.js') }}"></script>
 <script src="{{ asset('/js/app.js') }}"></script>

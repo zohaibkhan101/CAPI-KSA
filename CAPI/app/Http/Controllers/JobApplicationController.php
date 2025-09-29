@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -48,7 +47,8 @@ class JobApplicationController extends Controller
             $cvPath = $request->file('cv')->store('cvs', 'public');
         }
 
-        JobApplicant::create([
+        // Save the applicant and assign to variable
+        $applicant = JobApplicant::create([
             'job_id' => $job->id,
             'name' => $request->name,
             'email' => $request->email,
@@ -73,7 +73,10 @@ class JobApplicationController extends Controller
             'additional_info' => $request->additional_info,
         ]);
 
-        return back()->with('success', 'Your application has been submitted!');
+        // Return success with reference number
+        return redirect()->back()
+            ->with('success', 'Your application has been submitted!')
+            ->with('ref_number', $applicant->id);
     }
 
     // Get applicants for a job
