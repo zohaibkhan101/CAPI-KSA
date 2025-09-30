@@ -156,5 +156,13 @@ Route::middleware('auth')->group(function () {
         ->name('logout');
 });
 
+use App\Http\Controllers\BusinessCardController;
+
+
+// Show single business card (this is the link you’ll later convert to QR)
+Route::get('/business-card/{id}', [BusinessCardController::class, 'show'])->name('business-card.show');
+
+
+
 
 
