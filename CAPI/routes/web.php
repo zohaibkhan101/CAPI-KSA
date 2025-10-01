@@ -164,5 +164,9 @@ Route::get('/business-card/{id}', [BusinessCardController::class, 'show'])->name
 
 
 
+Route::post('/contact/send', [ContactController::class, 'send'])->name('contact.send');
+
+
+
 
 

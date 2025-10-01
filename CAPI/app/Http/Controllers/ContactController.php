@@ -9,25 +9,26 @@ class ContactController extends Controller
 {
     public function send(Request $request)
     {
-        // Validate form inputs
         $request->validate([
-            'name' => 'required|string|max:255',
-            'email' => 'required|email|max:255',
+            'name'    => 'required|string|max:255',
+            'email'   => 'required|email',
             'message' => 'required|string',
         ]);
 
-        // Send email
-        Mail::send('emails.contact', [
-            'name' => $request->name,
-            'email' => $request->email,
-            'msg' => $request->message
-        ], function ($mail) use ($request) {
-            $mail->to('info@capi-ksa.com') // Your company email
-                 ->subject('New Contact Form Submission')
-                 ->from($request->email, $request->name);
+        // Prepare email data
+        $data = [
+            'name'    => $request->name,
+            'email'   => $request->email,
+            'message' => $request->message,
+        ];
+
+        // Send to company email
+        Mail::send('emails.contact', $data, function ($mail) use ($data) {
+            $mail->to('info@capi-ksa.com')   // Company email
+                 ->from($data['email'], $data['name'])
+                 ->subject('New Contact Query from Website');
         });
 
-        return back()->with('success', 'Your message has been sent successfully!');
+        return back()->with('success', 'Thank you! Your message has been sent successfully.');
     }
 }
-
