@@ -163,7 +163,24 @@ const translations = {
         submitRegistration: "Submit Registration",
         // Language Switcher
         switchToArabic: "عربي",
-        switchToEnglish: "English"
+        switchToEnglish: "English",
+        gmMessageQuote: "At CAPI Global, our core belief is clear: Construction is about far more than structures. We are here to create lasting value, build absolute trust, and confidently deliver a better tomorrow. We are committed to excellence in every project.",
+        gmName: "Muhammad Kamal Alreyis",
+        gmPosition: "General Manager",
+        project1Title: "Landscaping",
+        project1Client: "Client: Zaid Alhussain Brothers & Group",
+        project1Scope: "Scope of Work: Landscaping, Finishing.",
+        project1Value: "Project Value: 1M+.",
+    
+        project2Title: "Sadeeq Alkhair Mosque",
+        project2Client: "Client: Attar United",
+        project2Scope: "Scope of Work: Wood Works, Finishing.",
+        project2Value: "Project Value: 1M+.",
+    
+        project3Title: "Basketball Court",
+        project3Client: "Client: Private Farm Al Mahdia",
+        project3Scope: "Scope of Work: Civil, MEP, Finishing.",
+        project3Value: "Project Value: 1M+."
     },
     
     ar: {
@@ -333,6 +350,23 @@ const translations = {
         // Language Switcher
         // switchToArabic: "عربي",
         // switchToEnglish: "English"
+        gmMessageQuote: "في كابي جلوبال، إيماننا الأساسي واضح: البناء أكثر بكثير من مجرد هياكل. نحن هنا لخلق قيمة مستدامة، وبناء ثقة مطلقة، وتقديم غدٍ أفضل بثقة. نحن ملتزمون بالتميز في كل مشروع.",
+    gmName: "محمد كمال الريس",
+    gmPosition: "المدير العام",
+    project1Title: "تنسيق حدائق",
+    project1Client: "العميل: مجموعة وإخوان زيد الحسين",
+    project1Scope: "نطاق العمل: تنسيق حدائق، تشطيب.",
+    project1Value: "قيمة المشروع: 1M+.",
+
+    project2Title: "مسجد صديق الخير",
+    project2Client: "العميل: عطار المتحدة",
+    project2Scope: "نطاق العمل: أعمال خشبية، تشطيب.",
+    project2Value: "قيمة المشروع: 1M+.",
+
+    project3Title: "ملعب كرة السلة",
+    project3Client: "العميل: مزرعة خاصة بالمهدية",
+    project3Scope: "نطاق العمل: أعمال مدنية، ميكانيكية وكهربائية وتشطيب.",
+    project3Value: "قيمة المشروع: 1M+."
     }
 };
 
